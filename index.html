@@ -1,92 +1,105 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Menta : Menta Acceptance Tests Framework for Magento written in PHP" />
+<head>
+    <meta charset='utf-8'/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <meta name="description" content="Menta : Menta Acceptance Tests Framework for Magento written in PHP"/>
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>Menta Acceptance Tests Framework for Magento</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/macopedia/Menta">View on GitHub</a>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+        <a id="forkme_banner" href="https://github.com/macopedia/Menta">View on GitHub</a>
 
-          <h1 id="project_title">Test your Magento with Menta</h1>
-          <h2 id="project_tagline">Menta is Acceptance Tests Framework for Magento</h2>
+        <h1 id="project_title">Test your Magento with Menta</h1>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/macopedia/Menta/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/macopedia/Menta/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <h2 id="project_tagline">Menta is Acceptance Tests Framework for Magento</h2>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/macopedia/Menta/zipball/master">Download this project
+                as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/macopedia/Menta/tarball/master">Download this project
+                as a tar.gz file</a>
+        </section>
+    </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Interested in Selenium tests of your Magento?</h3>
+            <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span
+                    class="octicon octicon-link"></span></a>Interested in Selenium tests of your Magento?</h3>
 
-<p>We can help you with that. Menta is an acceptance tests framework based on PHP Webdriver, which uses Selenium Server for testing. Is it hard? No - we have created general components for Magento.</p>
+        <p>We can help you with that. Menta is an acceptance tests framework based on PHP Webdriver, which uses Selenium
+            Server for testing. Is it hard? No - we have created general components for Magento.</p>
 
-<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h3>
-<p>First thing you need to have is Magento 1.8 working installation. Easiest way to install Magento is in this short tutorial: <a href="http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/installing_magento_via_shell_ssh">Magento - Wiki - Installing Magento Via SSH</a></p>
+        <h3><a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting
+            started</h3>
 
-<p>Next you need to download Menta. We have created sample project to help you with the first setup. Clone our sample project repository:</p>
+        <p>First thing you need to have is Magento 1.8 working installation. Easiest way to install Magento is in this
+            short tutorial: <a
+                    href="http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/installing_magento_via_shell_ssh">Magento
+                - Wiki - Installing Magento Via SSH</a></p>
 
-<pre><code>$ git clone https://github.com/macopedia/Menta_MagentoSampleProject.git</code></pre>
+        <p>Next you need to download Menta. We have created sample project to help you with the first setup. Clone our
+            sample project repository:</p>
 
-<p>Menta is using Composer. We need to install all required components:</p>
-<pre><code>$ ./composer.phar install</code></pre>
+        <pre><code>$ git clone https://github.com/macopedia/Menta_MagentoSampleProject.git</code></pre>
 
-<P>Menta can generate HTML reports for each tests. This is a great feature that can be connected with your CI environment. You need to create a directory for them:</P>
-<pre><code>$ cd Tests
-mkdir -p ../build/reports</code></pre>
+        <p>Menta is using Composer. We need to install all required components:</p>
+        <pre><code>$ ./composer.phar install</code></pre>
 
-<p>Now you need to run the Selenium Server. This is very easy in Unix OS. Just go to <a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a> and download the latest version of Selenium Server. After downloading you can run Selenium server:</p>
-<pre><code>$ java -jar selenium-server-standalone-<version-number>.jar</code></pre>
+        <P>Menta can generate HTML reports for each tests. This is a great feature that can be connected with your CI
+            environment. You need to create a directory for them:</P>
+        <pre><code>$ cd Tests
+        mkdir -p ../build/reports</code></pre>
 
-<p>Last step of the preparation is Menta setup. You need to create in Magento user for fronted, backend and also for Soap. Then you need to check the setup of Menta in conf/defaults.xml file.</p>
+        <p>Now you need to run the Selenium Server. This is very easy in Unix OS. Just go to <a
+                href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a> and download the
+            latest version of Selenium Server. After downloading you can run Selenium server:</p>
+        <pre><code>$ java -jar selenium-server-standalone-<version-number>.jar
+        </code></pre>
 
-<p>Now it's time for magic. Run this command and you will make your first Menta test:</p>
-<pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml General/ScreenshotsTest.php</code></pre>
+        <p>Last step of the preparation is Menta setup. You need to create in Magento user for fronted, backend and also
+            for Soap. Then you need to check the setup of Menta in conf/defaults.xml file.</p>
 
-<p>If your test runs succesfully it's time for all the tests:</p>
-<pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml ../vendor/aoemedia/menta/lib/Menta/Util/CreateTestSuite.php</code></pre>
+        <p>Now it's time for magic. Run this command and you will make your first Menta test:</p>
+        <pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml General/ScreenshotsTest.php</code></pre>
 
-<h3><a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h3>
-<p>We work hard to create documentation. Give us some time.</p>
+        <p>If your test runs succesfully it's time for all the tests:</p>
+        <pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml
+            ../vendor/aoemedia/menta/lib/Menta/Util/CreateTestSuite.php</code></pre>
 
-<h3><a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Need support?</h3>
-<p>Having trouble with Menta? Just post an issue on: <a href="https://github.com/macopedia/Menta_MagentoSampleProject/issues">https://github.com/macopedia/Menta_MagentoSampleProject/issues</a> and we will try to help you.</p>
-      </section>
-    </div>
+        <h3><a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation
+        </h3>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
+        <p>We work hard to create documentation. Give us some time.</p>
+
+        <h3><a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Need support?
+        </h3>
+
+        <p>Having trouble with Menta? Just post an issue on: <a
+                href="https://github.com/macopedia/Menta_MagentoSampleProject/issues">https://github.com/macopedia/Menta_MagentoSampleProject/issues</a>
+            and we will try to help you.</p>
+    </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
         <p class="copyright">Menta maintained by <a href="https://github.com/macopedia">macopedia</a></p>
+
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    </footer>
+</div>
 
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-599295-10', 'menta-tests.com');
-        ga('send', 'pageview');
-
-    </script>
-  </body>
+</body>
 </html>
