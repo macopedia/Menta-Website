@@ -9,6 +9,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>Menta Acceptance Tests Framework for Magento</title>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-599295-10', 'menta-tests.com');
+        ga('send', 'pageview');
+
+    </script>
 </head>
 
 <body>
@@ -60,13 +70,12 @@
         <P>Menta can generate HTML reports for each tests. This is a great feature that can be connected with your CI
             environment. You need to create a directory for them:</P>
         <pre><code>$ cd Tests
-        mkdir -p ../build/reports</code></pre>
+$ mkdir -p ../build/reports</code></pre>
 
         <p>Now you need to run the Selenium Server. This is very easy in Unix OS. Just go to <a
                 href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a> and download the
             latest version of Selenium Server. After downloading you can run Selenium server:</p>
-        <pre><code>$ java -jar selenium-server-standalone-<version-number>.jar
-        </code></pre>
+        <pre><code>$ java -jar selenium-server-standalone-<version-number>.jar</code></pre>
 
         <p>Last step of the preparation is Menta setup. You need to create in Magento user for fronted, backend and also
             for Soap. Then you need to check the setup of Menta in conf/defaults.xml file.</p>
@@ -75,8 +84,7 @@
         <pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml General/ScreenshotsTest.php</code></pre>
 
         <p>If your test runs succesfully it's time for all the tests:</p>
-        <pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml
-            ../vendor/aoemedia/menta/lib/Menta/Util/CreateTestSuite.php</code></pre>
+        <pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml ../vendor/aoemedia/menta/lib/Menta/Util/CreateTestSuite.php</code></pre>
 
         <h3><a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation
         </h3>
