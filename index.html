@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Menta : Menta Acceptance Tests Framework for Magento" />
+    <meta name="description" content="Menta : Menta Acceptance Tests Framework for Magento written in PHP" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Menta</title>
+    <title>Menta Acceptance Tests Framework for Magento</title>
   </head>
 
   <body>
@@ -16,14 +16,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/macopedia/Menta-Website">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/macopedia/Menta">View on GitHub</a>
 
-          <h1 id="project_title">Menta</h1>
-          <h2 id="project_tagline">Menta Acceptance Tests Framework for Magento</h2>
+          <h1 id="project_title">Test your Magento with Menta</h1>
+          <h2 id="project_tagline">Menta is Acceptance Tests Framework for Magento</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/macopedia/Menta-Website/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/macopedia/Menta-Website/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/macopedia/Menta/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/macopedia/Menta/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -32,36 +32,40 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Interested in Selenium tests of your Magento?</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>We can help you with that. Menta is an acceptance tests framework based on PHP Webdriver, which uses Selenium Server for testing. Is it hard? No - we have created general components for Magento.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h3><a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h3>
+<p>First thing you need to have is Magento 1.8 working installation. Easiest way to install Magento is in this short tutorial: <a href="http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/installing_magento_via_shell_ssh">Magento - Wiki - Installing Magento Via SSH</a></p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Next you need to download Menta. We have created sample project to help you with the first setup. Clone our sample project repository:</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<pre><code>$ git clone https://github.com/macopedia/Menta_MagentoSampleProject.git</code></pre>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Menta is using Composer. We need to install all required components:</p>
+<pre><code>$ ./composer.phar install</code></pre>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<P>Menta can generate HTML reports for each tests. This is a great feature that can be connected with your CI environment. You need to create a directory for them:</P>
+<pre><code>$ cd Tests
+mkdir -p ../build/reports</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Now you need to run the Selenium Server. This is very easy in Unix OS. Just go to <a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a> and download the latest version of Selenium Server. After downloading you can run Selenium server:</p>
+<pre><code>$ java -jar selenium-server-standalone-<version-number>.jar</code></pre>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>Last step of the preparation is Menta setup. You need to create in Magento user for fronted, backend and also for Soap. Then you need to check the setup of Menta in conf/defaults.xml file.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Now it's time for magic. Run this command and you will make your first Menta test:</p>
+<pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml General/ScreenshotsTest.php</code></pre>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>If your test runs succesfully it's time for all the tests:</p>
+<pre><code>$ ../bin/phpunit --configuration=../conf/defaults.xml ../vendor/aoemedia/menta/lib/Menta/Util/CreateTestSuite.php</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<h3><a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h3>
+<p>We work hard to create documentation. Give us some time.</p>
+
+<h3><a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Need support?</h3>
+<p>Having trouble with Menta? Just post an issue on: <a href="https://github.com/macopedia/Menta_MagentoSampleProject/issues">https://github.com/macopedia/Menta_MagentoSampleProject/issues</a> and we will try to help you.</p>
       </section>
     </div>
 
@@ -73,7 +77,16 @@ $ git checkout gh-pages
       </footer>
     </div>
 
-    
 
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-599295-10', 'menta-tests.com');
+        ga('send', 'pageview');
+
+    </script>
   </body>
 </html>
